@@ -1,34 +1,18 @@
 "use strict";
 
-/*
-console.log(window.document);
-// console.log(window.document.body);
-console.log(document.body);
-console.dir(window.document);
+const imagesDB = [
+  "https://upload.wikimedia.org/wikipedia/commons/0/07/Kot-026.jpg",
+  "https://static.dw.com/image/60081262_403.jpg",
+  "https://govzalla.com/wp-content/uploads/2015/02/little_cute_cat_1920x1080.jpg",
+  "https://cdn.pixabay.com/photo/2020/03/23/08/45/cat-4959941_960_720.jpg",
+];
 
-console.log(document.children);
-*/
+// const btn = document.querySelectorAll('.slider-container button');
+const [prevBtn, nextBtn] = document.querySelectorAll(".slider-container button");
+const img = document.querySelector(".slider-container .slide img");
 
-function btnHandler() {
-    console.log('Button is clicked');
-}
+const slider = new Slider(imagesDB);
 
-// const [btn] = document.getElementsByTagName('button');
-// console.log(btn);
+console.log(slider.currentSlide);
 
-// const btn = document.getElementById('btn');
-
-//const btn = document.querySelector('.btn + .btn');
-
-const btns1 = document.getElementsByClassName('btn');
-const btns2 = document.querySelectorAll('.btn');
-
-//btn.addEventListener('click', btnHandler);
-
-const ul = document.getElementsByTagName('ul')[0];
-// const ul = document.querySelector('h1+nav>ul');
-const li = document.querySelector('li:nth-child(4)');
-const h2 = document.getElementsByTagName('h2');
-// const h2 = document.querySelector('h2');
-const img = document.querySelector('img[alt=sea]');
-const p = document.querySelector('img[alt=sea]+.text');
+img.setAttribute("src", slider.currentSlide);
